@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign In</title>
+	<link rel="stylesheet" type="text/css" href="styles/auth.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet"/>
+</head>
+<body>
+	<div class="container">
+		<div class="form">
+			<h1><span>SIGN IN</span></h1>
+			<% if (locals.messages) { %>
+			<div class="isa_error">
+			   <i class="fa fa-times-circle"></i>
+			   <%= locals.messages %>
+			</div>
+			<% } %>
+			<form name="" method="post"> 
+				<input type="email" name="email" placeholder="Email Address"/><br/>
+				<input type="password" name="password" placeholder="Password"/><br/>
+				<input type="submit" id="signin-btn" value="Login"/>
+			</form>
+		</div>
+		<p class="small">Don't have an account? <a href="/signup">Sign up</a></p>
+	</div>
+</body>
+</html>

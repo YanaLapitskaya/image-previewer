@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Previewer</title>
+	<link rel="stylesheet" type="text/css" href="styles/auth.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet"/>
+</head>
+<body>
+	<header>
+		<div class="app-info">
+			<img src="images/logo.png" alt="logo" width="60" height="60" />
+			<h1 id="welcome">Welcome to Image Previewer!</h1>
+		</div>
+		<div class="user-info">
+			<img src="images/logout.png" width="25" height="25" style="float: right;" />
+			<p id="user-text">Hello, <%= login%>!</p>
+		</div>
+	</header>
+	<main>
+		<div id="search-form">
+			<form>
+				<input type="text" name="search-txt" placeholder="Search by keyword" style="width: 80%;float:left;">
+				<input type="submit" name="search-btn" placeholder="Search" style="width: 15%;margin-left: 20px;">
+			</form>
+		</div>
+		<div id="gallery">
+			
+		</div>
+	</main>
+</body>
+</html>

@@ -1,0 +1,142 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+ 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+	background-color: rgba(0, 0, 0, 0.035);
+	color: rgba(0, 0, 0, 0.7);
+	padding: 10px 20px;
+}
+
+h1{
+	font-size: 14px;
+	font-weight: 900;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+input{
+    width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+header{
+	width: 98%;
+	height: 80px;
+	box-sizing: border-box;
+	border-bottom: 1px solid grey;
+}
+
+.val-err{
+	color: red;
+	font-size: 10px;
+	padding-top: 0px;
+}
+
+.container{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	font-family: 'Lato', sans-serif;
+}
+
+.form{
+	padding: 5px 20px;
+	border: 1px solid grey;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	background-color: white;
+}
+
+.small{
+	font-size: 11px;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.app-info{
+	width: 60%;
+	height: 100%;
+	float: left;
+}
+
+.user-info{
+	height: 100%;
+	width: 30%;
+	float: right;
+	text-align: right;
+	padding: 15px 0px;
+}
+
+.isa_error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
+.isa_error i {
+    margin:10px 22px;
+    font-size:2em;
+    vertical-align:middle;
+}
+
+#signin-btn{
+	border: 1px solid grey;
+	border-radius: 4px;
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 13px;
+	font-weight: 900;
+}
+
+#signup-btn{
+	border: 1px solid grey;
+	border-radius: 4px;
+	color: white;
+	width: 30%;
+	margin-left: 180px;
+	background-color: #006400;
+	font-size: 8px;
+	font-weight: 900;
+}
+
+#gallery{
+	width: 99%;
+	border: 1px solid green;
+}
+
+#search-form{
+	width: 99%;
+	height: 100px;
+	box-sizing: border-box;
+	margin: 10px 0px;
+}
+
+#welcome{
+	font-size: 20px;
+	margin: -45px 100px;
+	text-align: left;
+}
+
+#user-text{
+	margin: 0px 50px;
+	font-weight: 900;
+	font-size: 22px;
+}
+
+a:link {
+    color: #00BFFF;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #00BFFF;
+    text-decoration: none;
+}
