@@ -33,5 +33,5 @@ export const getTags=async(req,res,next)=>{
 		}
 	}
 	imgMap = Object.keys(imgMap).sort(function(a,b){return imgMap[b]-imgMap[a]});
-	return imgMap.splice(0,3);
+	return imgMap;
 }

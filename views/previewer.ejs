@@ -7,6 +7,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="scripts/pictureFilter.js"></script>
+	<script src="scripts/jquery-3.2.1.js"></script>
 </head>
 <body>
 	<header>
@@ -18,16 +20,19 @@
 			<img src="images/logout.png" width="25" height="25" style="float: right;" />
 			<p id="user-text">Hello, <%=  %>!</p>
 		</div>
-	<main>
 	</header>
+	<main>
 		<div id="search-form">
-			<form>
-				<input type="text" name="search-txt" placeholder="Search by keyword" style="width: 80%;float:left;">
-				<input type="submit" name="search-btn" onclick="bip()" placeholder="Search" style="width: 15%;margin-left: 20px;">
-			</form>
-			<% tags.forEach(function(tag){ %>
-				<a><%=tag%></a>
-			<% }); %>
+			<div>
+				<input type="text" id="search-txt" placeholder="Search by keyword">
+				<button onclick="" type="button" id="search-btn">Search</button>
+			</div>
+			<div id="filterAnchors">
+				e.g.
+				<% tags.forEach(function(tag){ %>
+					<a><%=tag%></a>
+				<% }); %>
+			</div>
 		</div>
 		<div id="gallery">
 			<div class="image-box">
@@ -36,40 +41,42 @@
 					<p id="add-btn-text">Add New Image</p>
 				</a>
 			</div>
+			<div id="uploadedImages">
 			<% images.forEach(function(image) { %>
-				<img class="image-box" src="images/content/<%=image.path.match(/[^\\/]+\.[^\\/]+$/)%>" alt="bee"/>
+				<img class="image-box" src="images/content/<%=image.path.match(/[^\\/]+\.[^\\/]+$/)%>" tag="<%=image.tags%>" alt="bee"/>
 	    	<% }); %>
+	    	</div>
 		</div>
 	</main>
 
 	 <!-- Modal HTML -->
     <div id="myModal" class="modal fade">
-        <div id="left-modal">
-        	<h2>ADD IMAGE</h2>
-        	<div id="add-image-cont">
-				<div id="droparea">
-					<img src=""/>
-					<form method="post" enctype="multipart/form-data">
+		<form method="post" enctype="multipart/form-data">
+	        <div id="left-modal">
+	        	<h2>ADD IMAGE</h2>
+	        	<div id="add-image-cont">
+					<div id="drop-area">
+						<img src=""/>
+						<h4>Drag in your media</h4>
+						<p>Find media on your hard drive, then drag them in to automatically upload</p>
+					</div>
+					<div id="upload-area">
+						<p>Manually select media</p>
 						<input type="file" name="uploadedFile"/>
-						<input type="text" name="name"/>
-						<input type="text" name="tags"/>
-						<input type="text" name="description"/>
-						<input type="submit" name="submit"/>
-					</form>
-				</div>
-				<div>
-				</div>
-        	</div>
-        </div>
-        <div id="right-modal">
-        	<h3>ADD INFO</h3>
-        	<form>
-        		<label for="image-name">Name you media</label>
-        		<input type="text" id="image-name"/>
-        	</form>
-        </div>
+					</div>
+	        	</div>
+	        </div>
+	        <div id="right-modal">
+	        	<h2>ADD INFO</h2>
+        		<label for="name">Name you media</label>
+        		<input type="text" name="name"/>
+        		<label for="tags">Add tags</label>
+        		<textarea rows="6" cols="49" name="description"></textarea>
+        		<label for="description">Add description</label>
+        		<textarea rows="6" cols="49" name="description"></textarea>
+				<input type="submit" class="green-btn" name="submit" value="Publish"/>
+	        </div>
+		</form>
     </div>
-    <script type="text/javascript">
-    </script>
 </body>
 </html>
