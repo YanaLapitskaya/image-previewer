@@ -11,8 +11,8 @@ export const signup=async(req,res,next)=>{
 		res.render('signup');
 		res.locals.messages=undefined;
 	}
-	
-	res.render('previewer',{login: user.login});
+	req.session.user=user;
+	res.redirect('/previewer');
 }
 
 export const signin=async(req,res,next)=>{
@@ -34,6 +34,6 @@ export const signin=async(req,res,next)=>{
 		res.render('signin');
 		res.locals.messages=undefined;
 	}
-
-	res.render('previewer',{login: user.login});
+	req.session.user=user;
+	res.redirect('/previewer');
 }

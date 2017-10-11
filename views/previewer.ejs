@@ -2,8 +2,11 @@
 <html>
 <head>
 	<title>Image Previewer</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/auth.css"/>
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<header>
@@ -13,19 +16,60 @@
 		</div>
 		<div class="user-info">
 			<img src="images/logout.png" width="25" height="25" style="float: right;" />
-			<p id="user-text">Hello, <%= login%>!</p>
+			<p id="user-text">Hello, <%=  %>!</p>
 		</div>
-	</header>
 	<main>
+	</header>
 		<div id="search-form">
 			<form>
 				<input type="text" name="search-txt" placeholder="Search by keyword" style="width: 80%;float:left;">
-				<input type="submit" name="search-btn" placeholder="Search" style="width: 15%;margin-left: 20px;">
+				<input type="submit" name="search-btn" onclick="bip()" placeholder="Search" style="width: 15%;margin-left: 20px;">
 			</form>
+			<% tags.forEach(function(tag){ %>
+				<a><%=tag%></a>
+			<% }); %>
 		</div>
 		<div id="gallery">
-			
+			<div class="image-box">
+				<a href="#myModal" data-toggle="modal">
+					<img src="images/add.png"  id="add-btn"/>
+					<p id="add-btn-text">Add New Image</p>
+				</a>
+			</div>
+			<% images.forEach(function(image) { %>
+				<img class="image-box" src="images/content/<%=image.path.match(/[^\\/]+\.[^\\/]+$/)%>" alt="bee"/>
+	    	<% }); %>
 		</div>
 	</main>
+
+	 <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div id="left-modal">
+        	<h2>ADD IMAGE</h2>
+        	<div id="add-image-cont">
+				<div id="droparea">
+					<img src=""/>
+					<form method="post" enctype="multipart/form-data">
+						<input type="file" name="uploadedFile"/>
+						<input type="text" name="name"/>
+						<input type="text" name="tags"/>
+						<input type="text" name="description"/>
+						<input type="submit" name="submit"/>
+					</form>
+				</div>
+				<div>
+				</div>
+        	</div>
+        </div>
+        <div id="right-modal">
+        	<h3>ADD INFO</h3>
+        	<form>
+        		<label for="image-name">Name you media</label>
+        		<input type="text" id="image-name"/>
+        	</form>
+        </div>
+    </div>
+    <script type="text/javascript">
+    </script>
 </body>
 </html>
