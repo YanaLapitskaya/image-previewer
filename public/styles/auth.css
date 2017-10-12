@@ -37,10 +37,22 @@ header{
 	box-sizing: border-box;
 	border-bottom: 1px solid grey;
 }
-h2{
 
+input[type=file]{
+	display: none;
 }
 
+.custom-file-upload{
+	border: 1px solid #ccc;
+	margin-left: 20px;
+    cursor: pointer;
+    font-weight: 900;
+	border-radius: 4px;
+	border: 1px solid black;
+	width: 20px;
+	height: 20px;
+	box-shadow: inset 0px -11px 8px -10px rgba(0,0,0,0.5);
+}
 
 .val-err{
 	color: red;
@@ -98,17 +110,6 @@ h2{
 	padding: 15px 0px;
 }
 
-.green-btn{
-	border: 1px solid grey;
-	border-radius: 4px;
-	color: white;
-	width: 30%;
-	margin-left: 180px;
-	background-color: #006400;
-	font-size: 8px;
-	font-weight: 900;
-}
-
 .isa_error {
     color: #D8000C;
     background-color: #FFD2D2;
@@ -118,6 +119,29 @@ h2{
     margin:10px 22px;
     font-size:2em;
     vertical-align:middle;
+}
+
+#publish-btn{
+	border: 1px solid grey;
+	border-radius: 4px;
+	font-size: 11px;
+	color: white;
+	width: 100px;
+	height: 30px;
+	float: right;
+	background-color: #006400;
+	font-weight: 900;
+}
+
+#signup-btn{
+	border: 1px solid grey;
+	border-radius: 4px;
+	color: white;
+	width: 30%;
+	margin-left: 180px;
+	background-color: #006400;
+	font-size: 8px;
+	font-weight: 900;
 }
 
 #signin-btn{
@@ -186,12 +210,23 @@ h2{
 	border-bottom: 1px solid black;
 	height: 400px;
 	vertical-align: center;
+	text-align: center;
 }
 
 #add-image-cont{
 	background-color: rgba(0, 0, 0, 0.05);
 	border: 1px solid black;
 	height: 450px;
+}
+
+#upload-area{
+	text-align: center;
+	padding: 10px;
+}
+#drag-image{
+	width: 250px;
+	height: 250px;
+	margin-top: 25px;
 }
 
 #add-btn{

@@ -18,7 +18,7 @@
 		</div>
 		<div class="user-info">
 			<img src="images/logout.png" width="25" height="25" style="float: right;" />
-			<p id="user-text">Hello, <%=  %>!</p>
+			<p id="user-text">Hello, <%=user.login%>!</p>
 		</div>
 	</header>
 	<main>
@@ -43,7 +43,7 @@
 			</div>
 			<div id="uploadedImages">
 			<% images.forEach(function(image) { %>
-				<img class="image-box" src="images/content/<%=image.path.match(/[^\\/]+\.[^\\/]+$/)%>" tag="<%=image.tags%>" alt="bee"/>
+				<img class="image-box" src="images/content/<%=image.path.match(/[^\\/]+\.[^\\/]+$/)%>" tag="<%=image.tags%>" alt="<%=image.name%>"/>
 	    	<% }); %>
 	    	</div>
 		</div>
@@ -56,13 +56,15 @@
 	        	<h2>ADD IMAGE</h2>
 	        	<div id="add-image-cont">
 					<div id="drop-area">
-						<img src=""/>
-						<h4>Drag in your media</h4>
+						<img src="images/images.png" id="drag-image"/>
+						<h4><b>Drag in your media</b></h4>
 						<p>Find media on your hard drive, then drag them in to automatically upload</p>
 					</div>
 					<div id="upload-area">
-						<p>Manually select media</p>
-						<input type="file" name="uploadedFile"/>
+						<b>Manually select media</b>
+						<label class='custom-file-upload'>&#8593
+							<input type="file" name="uploadedFile"/>
+						</label>
 					</div>
 	        	</div>
 	        </div>
@@ -71,12 +73,20 @@
         		<label for="name">Name you media</label>
         		<input type="text" name="name"/>
         		<label for="tags">Add tags</label>
-        		<textarea rows="6" cols="49" name="description"></textarea>
+        		<textarea rows="6" cols="50" name="tags"></textarea>
         		<label for="description">Add description</label>
-        		<textarea rows="6" cols="49" name="description"></textarea>
-				<input type="submit" class="green-btn" name="submit" value="Publish"/>
+        		<textarea rows="6" cols="50" name="description"></textarea>
+				<input type="submit" id="publish-btn" name="submit" value="Publish"/>
 	        </div>
 		</form>
     </div>
 </body>
+<script>
+	$('body').click(function (event) 
+	{
+	   if(!$(event.target).closest('#myModal').length && !$(event.target).is('#myModal')) {
+	     $(".modalDialog").hide();
+	   }     
+	});
+</script>
 </html>

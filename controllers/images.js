@@ -9,7 +9,7 @@ export const upload=async(req,res,next)=>{
 							description:req.body.description});
 		res.redirect('/previewer');
 	}catch(e){
-		res.end(e);
+		console.log(e);
 	}
 }
 
